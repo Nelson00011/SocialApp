@@ -22,7 +22,7 @@ Next.js application that is meant to organize and plan Social Meetings.
 
 - Initial package.json & install dependencies (localhost: 3000):
 ```
-> npx create-next app 
+> npx create-next app <project name>
 > cd <project name>
 > npm install next react react-dom
 ```
@@ -54,8 +54,8 @@ Next.js application that is meant to organize and plan Social Meetings.
 > npm start
 ```
 
-## Resources & Helpful Hints:
+## Additional Resources:
 - [Next](https://nextjs.org/docs/getting-started#system-requirements)
-- [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) for React.js style.
-- [React-router-dom](https://reactrouter.com/en/main/components/await) Await Components and other useful information. 
+-- Link uses href instead of to. 
 - [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-routes) in Next.js
+- [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) to allow styles to be treated like objects.
