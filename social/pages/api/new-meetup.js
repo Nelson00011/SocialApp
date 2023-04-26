@@ -1,13 +1,31 @@
-//API function with server-side code
 // /api/new-meetup
+// POST /api/new-meetup
+// TODO MongoDB 
 
-function handleClientScriptLoad(req,res){
-if(req.method==="POST"){
+import { MongoClient } from 'mongodb';
+
+
+async function handler(req, res) {
+  if (req.method === 'POST') {
     const data = req.body;
-    const { title, image, address, descrption } = data;
+    console.log("api DATA")
+    console.log(data)
+    // const { title, image, address, description } = data;
     
-}
+    const uri = "mongodb+srv://luluBlue:75qf7vXP25tOMA8G@cluster0.aoag1gt.mongodb.net/socialapp?retryWrites=true&w=majority";
+    const client = await MongoClient.connect(uri);
+    const db = client.db();
+    //Prespecified collections on Atlas
+    const meetupsCollection = db.collection('socialapp');
 
+    const result = await meetupsCollection.insertOne(data);
+    console.log("RESULT")
+    console.log(result);
+
+    client.close();
+
+    res.status(201).json({ message: 'Meetup inserted!' });
+  }
 }
 
 export default handler;
