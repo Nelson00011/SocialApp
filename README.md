@@ -6,7 +6,7 @@ Next.js application that is meant to organize and plan Social Meetings.
 
 **APIs:**  NYtimes, GoogleNews, tbd?
 
-**Back-End:** Express.js, tbd?
+**Back-End:** MongoDB, Node.js
 
 
 
