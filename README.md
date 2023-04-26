@@ -54,8 +54,8 @@ Next.js application that is meant to organize and plan Social Meetings.
 > npm start
 ```
 
-## Additional Resources:
+## Additional Resources & Helpful Hints:
 - [Next](https://nextjs.org/docs/getting-started#system-requirements)
--- Link uses href instead of to. 
+-- <Link/> uses href instead of to & getStaticProps is required. 
 - [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-routes) in Next.js
 - [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) to allow styles to be treated like objects.
