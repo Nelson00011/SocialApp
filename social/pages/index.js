@@ -1,23 +1,6 @@
+import { MongoClient } from "mongodb";
+
 import MeetupList from "@/components/meetups/MeetupList";
-
-
-const DUMMY_MEETUPS = [
-    {
-        id : 'm1',
-        title: "A First Meeting",
-        image: "https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/best-beaches-in-bali-1518082410-785X440.jpg",
-        address: "132 Drive, Beach City.",
-        description: "This is one!"
-    },
-    {
-        id : 'm2',
-        title: "A First Meeting",
-        image: "https://d3hne3c382ip58.cloudfront.net/files/uploads/bookmundi/resized/cmsfeatured/best-beaches-in-bali-1518082410-785X440.jpg",
-        address: "132 Drive, Beach City.",
-        description: "This is one!"
-    }
-];
-
 
 function HomePage(props){
 return (
@@ -42,9 +25,25 @@ return (
 //Option 2 static props
 export async function getStaticProps(){
     //TODO fetch with API
+    const uri = "mongodb+srv://luluBlue:75qf7vXP25tOMA8G@cluster0.aoag1gt.mongodb.net/socialapp?retryWrites=true&w=majority";
+    const client = await MongoClient.connect(uri);
+    const db = client.db();
+    const meetupsCollection = db.collection('socialapp');
+
+    const meetupsAll = await meetupsCollection.find().toArray();
+    //close always
+    client.close();
+
+
+    
     return {
         props: {
-            meetups: DUMMY_MEETUPS,
+            meetups: meetupsAll.map((c)=> ({
+                title: c.title,
+                address: c.address,
+                image: c.image,
+                id: c.toString(),
+            }))
         },
         revalidate: 10,
     };

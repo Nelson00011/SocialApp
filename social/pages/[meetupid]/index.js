@@ -1,47 +1,63 @@
 //TODO
+import { MongoClient, ObjectId } from 'mongodb';
 
 import MeetupDetails from "@/components/meetups/MeetupDetails";
 
 function MeetupDetail(props){
 //TODO pull data from Dummy before API & eliminate place holders.
-    return (<MeetupDetails image={props.image}
-        title={props.title}
-        address={props.address}
-        description={props.description} />);
+    return (<MeetupDetails 
+        image={props.meetupData.image}
+        title={props.meetupData.title}
+        address={props.meetupData.address}
+        description={props.meetupData.description} 
+        />
+    );
 }
 
 export async function getStaticPaths(){
-//TODO fetch option via API
-//fallback false means all things are covered. 
-    return{
-        fallback: true,
-        paths: [
-            {params: {
-            meetupId: 'm1',
-            },
-        },
-            {params: {
-                meetupId: 'm2',
-                },
-            },
-        ],
+//fx'l
+    const uri = "mongodb+srv://luluBlue:75qf7vXP25tOMA8G@cluster0.aoag1gt.mongodb.net/socialapp?retryWrites=true&w=majority";
+    const client = await MongoClient.connect(uri);
+    const db = client.db();
+    const meetupsCollection = db.collection('socialapp');
+
+    const meetupsAll = await meetupsCollection.find({}, { _id: 1 }).toArray();
+    client.close()
+    //fallback false means all things are covered. 
+    
+    return {
+        fallback: false,
+        paths: meetupsAll.map((social)=> ({ 
+        params: { meetupId: social._id.toString() },
+        })),
     };
 }
 
+
 export async function getStaticProps(context){
-    //TODO fetch with API
+    //TODO fetch with API, required for Next.js load fx, must have ObjectId for findOne
     const meetupId = context.params.meetupId;
-    console.log(meetupId)
+       
+    const uri = "mongodb+srv://luluBlue:75qf7vXP25tOMA8G@cluster0.aoag1gt.mongodb.net/socialapp?retryWrites=true&w=majority";
+    const client = await MongoClient.connect(uri);
+    const db = client.db();
+    const meetupsCollection = db.collection('socialapp');
+
+    const selectedMeetup = await meetupsCollection.findOne({ 
+        _id: ObjectId(meetupId),
+     });
+  
+    client.close()
 
     return {
         props: {
-            meetupData:{
-                image: "https://blog.hubspot.de/hubfs/Germany/Blog_images/smart-bidding.png",
-                id: meetupId,
-                title: "First Title",
-                address: "123 Beach San Francisco, CA",
-    
-            } 
+            meetupData: {
+                id: selectedMeetup._id.toString(),
+                title: selectedMeetup.title,
+                address: selectedMeetup.address,
+                image: selectedMeetup.image,
+                description: selectedMeetup.description,
+            },
         },
     };
 }
