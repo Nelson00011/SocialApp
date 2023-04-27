@@ -35,9 +35,9 @@ export async function getStaticPaths(){
 
     client.close();
   
-    //COMMENT: fallback:false produces a 404 for unsupported pages. 
+    //COMMENT: fallback:'blocking' prevents page loading till HTML generated 
     return {
-      fallback: false,
+      fallback: 'blocking',
       paths: meetupsAll.map((meetup) => ({
         params: { meetupId: meetup._id.toString() },
       })),
