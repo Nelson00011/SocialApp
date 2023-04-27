@@ -63,7 +63,7 @@ import { MongoClient } from 'mongodb';
 
 
 ## Additional Resources & Helpful Hints:
-- [Next](https://nextjs.org/docs/getting-started#system-requirements)
+- [Next](https://nextjs.org/docs/getting-started#system-requirements).js
     - < Link /> uses href instead of to & getStaticProps/getStaticPath for Next.js.
     - [next/head](https://nextjs.org/docs/api-reference/next/head) for meta-data
     - [next/route](https://nextjs.org/docs/api-reference/next/router) & [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes) for Next.js
