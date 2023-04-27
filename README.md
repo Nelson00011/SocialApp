@@ -60,6 +60,15 @@ Next.js application that is meant to organize and plan Social Meetings.
 import { MongoClient } from 'mongodb';
 ```
 
+--------------------------------------------------
+### Deployment
+#### Vercel (Next.js)
+- Establish Vercel account (see resources)
+-  Acceptable Git Repository Provider ([Github](https://github.com/), [Gitlab](https://about.gitlab.com/), [BitBucket](https://bitbucket.org/product)):
+- Build Script for Production:
+```
+> npm run build
+```
 
 
 ## Additional Resources & Helpful Hints:
@@ -70,5 +79,6 @@ import { MongoClient } from 'mongodb';
 - [REACT](https://react.dev/).js docs
     - [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) to allow styles to be treated like objects.
 - [MongoDB](https://www.mongodb.com/) will be used with Drivers (Atla Cluster())
+- [Vercel](https://vercel.com/) for Deployment Next.js
 - [GoogleMap API](https://www.99darshan.com/posts/interactive-maps-using-nextjs-and-google-maps/) helpful hints. 
 - Always Stay Positive & When in Doubt Double Check Permissions :) 
