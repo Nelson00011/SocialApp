@@ -67,7 +67,8 @@ import { MongoClient } from 'mongodb';
     - < Link /> uses href instead of to & getStaticProps/getStaticPath for Next.js.
     - [next/head](https://nextjs.org/docs/api-reference/next/head) for meta-data
     - [next/route](https://nextjs.org/docs/api-reference/next/router) & [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes) for Next.js
-- [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) to allow styles to be treated like objects.
+- [REACT](https://react.dev/).js docs
+    - [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) to allow styles to be treated like objects.
 - [MongoDB](https://www.mongodb.com/) will be used with Drivers (Atla Cluster())
 - [GoogleMap API](https://www.99darshan.com/posts/interactive-maps-using-nextjs-and-google-maps/) helpful hints. 
 - Always Stay Positive & When in Doubt Double Check Permissions :) 

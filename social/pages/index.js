@@ -1,11 +1,19 @@
-import 
+import { Fragment } from 'react';
+import Head from 'next/head';
 import { MongoClient } from "mongodb";
 
 import MeetupList from '../components/meetups/MeetupList';
 
 function HomePage(props){
 return (
+    <Fragment>
+    <Head>
+      <title>Social App</title>
+        <meta name='description' content="Navigation Social Event & update to user profile vs browsing capabilities" > 
+      </meta>
+    </Head>
     <MeetupList meetups={props.meetups} />
+    </Fragment>
 );
 }
 
