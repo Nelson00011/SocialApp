@@ -2,9 +2,9 @@
 Next.js application that is meant to organize and plan Social Meetings. 
 
 ## Technology Stack
-**Front-End:** HTML5, CSS, Next.js, Node.js
+**Front-End:** HTML5, CSS, Next.js
 
-**APIs:**  NYtimes, GoogleNews, tbd?
+**APIs:**  Google Travel, , tbd?
 
 **Back-End:** MongoDB, Node.js
 
@@ -22,7 +22,7 @@ Next.js application that is meant to organize and plan Social Meetings.
 
 - Initial package.json & install dependencies (localhost: 3000):
 ```
-> npx create-next app <project name>
+> npx create-next-app <project name>
 > cd <project name>
 > npm install next react react-dom
 ```
@@ -64,8 +64,10 @@ import { MongoClient } from 'mongodb';
 
 ## Additional Resources & Helpful Hints:
 - [Next](https://nextjs.org/docs/getting-started#system-requirements)
--- < Link /> uses href instead of to & getStaticProps is required. 
-- [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-routes) in Next.js
+    - < Link /> uses href instead of to & getStaticProps is required. 
+    - [next/head](https://nextjs.org/docs/api-reference/next/head) for meta-data
+    - [next/route] (https://nextjs.org/docs/api-reference/next/router) & [dynamic routes](https://nextjs.org/docs/routing/dynamic-routes) for Next.js
 - [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) to allow styles to be treated like objects.
-- [MongoDB](https://www.mongodb.com/) will need to be connected with Node.js Driver.
+- [MongoDB](https://www.mongodb.com/) will be used with Drivers (Atla Cluster())
+- [GoogleMap API](https://www.99darshan.com/posts/interactive-maps-using-nextjs-and-google-maps/) helpful hints. 
 - Always Stay Positive & When in Doubt Double Check Permissions :) 

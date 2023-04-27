@@ -1,6 +1,7 @@
+import 
 import { MongoClient } from "mongodb";
 
-import MeetupList from "@/components/meetups/MeetupList";
+import MeetupList from '../components/meetups/MeetupList';
 
 function HomePage(props){
 return (
@@ -24,28 +25,27 @@ return (
 
 //Option 2 static props
 export async function getStaticProps(){
-    //TODO fetch with API
+    //COMMENT: Fetch with mongoDB API & fx'l
     const uri = "mongodb+srv://luluBlue:75qf7vXP25tOMA8G@cluster0.aoag1gt.mongodb.net/socialapp?retryWrites=true&w=majority";
     const client = await MongoClient.connect(uri);
     const db = client.db();
     const meetupsCollection = db.collection('socialapp');
 
     const meetupsAll = await meetupsCollection.find().toArray();
-    //close always
+    //COMMENT: close always
+  
     client.close();
 
-
-    
     return {
-        props: {
-            meetups: meetupsAll.map((c)=> ({
-                title: c.title,
-                address: c.address,
-                image: c.image,
-                id: c.toString(),
-            }))
-        },
-        revalidate: 10,
+      props: {
+        meetups: meetupsAll.map((c) => ({
+          title: c.title,
+          address: c.address,
+          image: c.image,
+          id: c._id.toString(),
+        })),
+      },
+      revalidate: 1,
     };
 }
 
