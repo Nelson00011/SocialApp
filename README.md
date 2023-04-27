@@ -53,7 +53,7 @@ Next.js application that is meant to organize and plan Social Meetings.
     - MongoClient.connect(url)
         - url must have username:password (recomment autogenerate) 
         - url collection naming example: 
-        - "net/<name of collection>?retryWRites=true..."
+        - "net/< name of collection >?retryWRites=true..."
     
 > Required for api/meetup.js
 ```
@@ -64,7 +64,7 @@ import { MongoClient } from 'mongodb';
 
 ## Additional Resources & Helpful Hints:
 - [Next](https://nextjs.org/docs/getting-started#system-requirements)
--- <Link/> uses href instead of to & getStaticProps is required. 
+-- < Link /> uses href instead of to & getStaticProps is required. 
 - [Dynamic Routes](https://nextjs.org/docs/routing/dynamic-routes) in Next.js
 - [CSS modules](https://create-react-app.dev/docs/adding-a-css-modules-stylesheet/) to allow styles to be treated like objects.
 - [MongoDB](https://www.mongodb.com/) will need to be connected with Node.js Driver.
