@@ -65,10 +65,7 @@ import { MongoClient } from 'mongodb';
 #### Vercel (Next.js)
 - Establish Vercel account (see resources)
 -  Acceptable Git Repository Provider ([Github](https://github.com/), [Gitlab](https://about.gitlab.com/), [BitBucket](https://bitbucket.org/product)):
-- Build Script for Production:
-```
-> npm run build
-```
+
 
 
 ## Additional Resources & Helpful Hints:
