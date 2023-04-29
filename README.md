@@ -1,13 +1,18 @@
-# SocialApp
-Next.js application that is meant to organize and plan Social Meetings. 
+<h1 align="center">Social App</h1>
+
+![image](https://user-images.githubusercontent.com/112737682/235284912-98667e6b-3eaa-4f0d-b956-c9aa324152b2.png)
+## Description
+**SocialApp** is a **Next.js** application that is meant to organize and schedule social meetings. Social Events display on the main page, including location. 
+- The social events are saved on a ***MongoDB*** collection using *MongoClient* to communicate to *Atlas*, instantly updating social events by Authorized Users.
+- User Authentification via allows individuals ability to edit, delete & update applications not available to the general user firebase - **in-progress** 
+- ***CSS.modules*** in combinatio with bootstraps provide a clean design aesthetic across the entire Next.js application. 
 
 ## Technology Stack
 **Front-End:** HTML5, CSS, Next.js
 
-**APIs:**  Google Travel, , tbd?
+**APIs:**  MongoDB, Google Travel,  **in-progress** 
 
-**Back-End:** MongoDB, Node.js
-
+**Back-End:**  MongoDB, Node.js
 
 
 ## Run Code (Environment)
